@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/bonus/:path*",
+      "destination": "https://crypto-nine-theta.vercel.app/:path*"
+    }
+  ]
+}
