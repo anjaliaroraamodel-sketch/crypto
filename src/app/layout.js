@@ -1,4 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -38,38 +39,28 @@ export default function RootLayout({ children }) {
     >
       <head>
         {/* Meta Pixel Code */}
-        <script dangerouslySetInnerHTML={{
-          __html: `!function(f,b,e,v,n,t,s)
+        <Script
+          id="fb-pixel"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `!function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;
-
-n.push=n;
-n.loaded=!0;
-n.version='2.0';
-n.queue=[];
-
-t=b.createElement(e);
-t.async=!0;
-t.src=v;
-
-s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)
-
-}(window, document,'script',
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}
+(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 
-fbq('init', '1325098349725031');
-
-/* TEST EVENT CODE */
-fbq('set', 'agent', 'tmgoogletagmanager', '1325098349725031');
-
-fbq('track', 'PageView', {}, {
-  eventID: 'TEST32885'
-});` }} />
+fbq('init', '2094797471087944');
+fbq('set', 'test_event_code', 'TEST43276');
+fbq('track', 'PageView');`,
+          }}
+        />
         <noscript>
           <img height="1" width="1" style={{ display: 'none' }}
-            src="https://www.facebook.com/tr?id=1325098349725031&ev=PageView&noscript=1"
+            src="https://www.facebook.com/tr?id=2094797471087944&ev=PageView&noscript=1"
             alt="Meta Pixel" />
         </noscript>
         {/* End Meta Pixel Code */}
